@@ -7,9 +7,9 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { ConfidentialBadge } from "@/components/ConfidentialBadge";
 import { MemberAvatar } from "@/components/MemberAvatar";
 import { members } from "@/data/members";
-import { useParStore, computeIndividualResult, computeFinalSalaries } from "@/store/parStore";
+import { useParStore, computeIndividualResult, computeFinalSalaries, goalCompletionPct } from "@/store/parStore";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Lock } from "lucide-react";
+import { Lock, Link2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const typeColor = (t: string) =>
