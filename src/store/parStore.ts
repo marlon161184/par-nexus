@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { members } from "@/data/members";
+import { members, type Goal } from "@/data/members";
 
-type Completions = Record<string, Record<string, number>>; // memberId -> goalId -> %
+type Completions = Record<string, Record<string, number>>; // memberId -> goalId(or goalId:subId) -> %
 
 interface ParState {
   ebitda: number; // %
@@ -18,9 +18,14 @@ const seed: Completions = {};
 members.forEach((m) => {
   seed[m.id] = {};
   m.goals.forEach((g) => {
-    // pseudo-random pleasant defaults 60-95
     const base = 60 + ((m.id.charCodeAt(0) + g.points) % 36);
-    seed[m.id][g.id] = base;
+    if (g.subKpis?.length) {
+      g.subKpis.forEach((s, i) => {
+        seed[m.id][`${g.id}:${s.id}`] = Math.min(100, base + i * 3);
+      });
+    } else {
+      seed[m.id][g.id] = base;
+    }
   });
 });
 
@@ -40,28 +45,44 @@ export const useParStore = create<ParState>((set, get) => ({
   getCompletion: (memberId, goalId) => get().completions[memberId]?.[goalId] ?? 0,
   resetMember: (memberId) =>
     set((s) => ({
-      completions: {
-        ...s.completions,
-        [memberId]: Object.fromEntries(
-          (members.find((m) => m.id === memberId)?.goals ?? []).map((g) => [g.id, 0]),
-        ),
-      },
+      completions: { ...s.completions, [memberId]: {} },
     })),
 }));
+
+// Returns the goal's effective % atingido (0..cap), aggregating sub-KPIs if present.
+export const goalCompletionPct = (
+  memberId: string,
+  goal: Goal,
+  completions: Completions,
+): number => {
+  const cap = goal.cap ?? 120;
+  let pct = 0;
+  if (goal.subKpis?.length) {
+    // Each sub-KPI contributes its weighted share of points.
+    const subPtsTotal = goal.subKpis.reduce((s, sk) => s + sk.points, 0) || goal.points;
+    const earned = goal.subKpis.reduce((sum, sk) => {
+      const v = completions[memberId]?.[`${goal.id}:${sk.id}`] ?? 0;
+      return sum + (Math.min(v, cap) / 100) * sk.points;
+    }, 0);
+    pct = (earned / subPtsTotal) * 100;
+  } else {
+    pct = completions[memberId]?.[goal.id] ?? 0;
+  }
+  return Math.min(pct, cap);
+};
 
 // Helpers
 export const computeIndividualResult = (memberId: string, completions: Completions) => {
   const m = members.find((x) => x.id === memberId)!;
   const total = m.goals.reduce((sum, g) => {
-    const pct = (completions[memberId]?.[g.id] ?? 0) / 100;
+    const pct = goalCompletionPct(memberId, g, completions) / 100;
     return sum + pct * g.points;
   }, 0);
-  return Math.round(total * 10) / 10; // 0..~120
+  return Math.round(total * 10) / 10;
 };
 
 export const ebitdaMultiplier = (ebitda: number) => {
   if (ebitda < 90) return 0;
-  // Linear: 90% -> 1.0x, 100% -> 1.1x, 120% -> 1.3x (cap)
   const m = 1 + (ebitda - 90) / 100;
   return Math.min(m, 1.3);
 };
@@ -75,7 +96,7 @@ export const computeFinalSalaries = (
   if (regra === "ZERADO") return 0;
   if (ebitda < 90) return 0;
   const m = members.find((x) => x.id === memberId)!;
-  const result = computeIndividualResult(memberId, completions); // 0..~120 (base 100)
+  const result = computeIndividualResult(memberId, completions);
   const mult = ebitdaMultiplier(ebitda);
   const finalPct = (result / 100) * mult;
   return Math.round(finalPct * m.salaryMultiplier * 10) / 10;

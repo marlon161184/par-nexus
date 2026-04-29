@@ -15,7 +15,7 @@ export default function Elegiveis() {
     <div>
       <SectionHeader
         eyebrow="Liderança 2026"
-        title="Os 10 Elegíveis"
+        title="Os 11 Elegíveis"
         description="Cada executivo possui um painel individual com metas corporativas e individuais ponderadas em base 100. Os valores em R$ permanecem confidenciais — exibimos apenas o multiplicador de salários."
       />
 

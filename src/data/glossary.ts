@@ -12,7 +12,7 @@ export const glossary: Term[] = [
   { term: "Frente de Avaliação", definition: "Eixo no qual o desempenho é medido.", usage: "PAR 2026 possui 3 frentes: Gatilho, Regra de Ouro e Metas.", example: "Frente 1 = EBITDA corporativo." },
   { term: "Meta Corporativa", definition: "Meta da companhia, compartilhada por vários elegíveis.", usage: "Reflete resultado coletivo (VGV, EBITDA, custos).", example: "Controle de Custos de Obra para Fernando e Rogério." },
   { term: "Meta Individual", definition: "Meta específica do papel do executivo.", usage: "Mede entrega pessoal e diferenciação.", example: "Lançamento Ária para Fernando." },
-  { term: "Regra de Ouro", definition: "Critério eliminatório: zero acidente com afastamento > 90 dias.", usage: "Se violada, zera o bônus de todos os 10 elegíveis.", example: "Acidente grave registrado → bônus = 0." },
+  { term: "Regra de Ouro", definition: "Critério eliminatório: zero acidente com afastamento > 90 dias.", usage: "Se violada, zera o bônus de todos os 11 elegíveis.", example: "Acidente grave registrado → bônus = 0." },
   { term: "KPI", definition: "Key Performance Indicator — indicador-chave de desempenho.", usage: "Define como cada meta é medida objetivamente.", example: "KPI de VSO = unidades vendidas / oferta." },
   { term: "Pontos por Meta", definition: "Peso da meta no painel individual (escala 100).", usage: "Quanto mais estratégica, mais pontos.", example: "Custos de Obra para Rogério vale 30 pts." },
   { term: "Pontuação Ponderada", definition: "Resultado parcial da meta = % atingido × pontos.", usage: "Soma compõe o resultado individual final.", example: "100% × 25 pts = 25 pts." },
@@ -35,4 +35,7 @@ export const glossary: Term[] = [
   { term: "Milestone", definition: "Marco binário: cumprido ou não.", usage: "Usado em entregas críticas.", example: "Aprovação do 5 Year Plan." },
   { term: "DDS", definition: "Diálogo Diário de Segurança.", usage: "Indicador proativo de cultura de segurança.", example: "≥ 85% de aderência em obras." },
   { term: "Ciclo de Apuração", definition: "Período de medição do PAR.", usage: "PAR 2026 cobre jan/26 a dez/26.", example: "Apuração final em jan/27." },
+  { term: "NPS de Marca", definition: "Net Promoter Score aplicado à percepção de marca.", usage: "Mede a força do reposicionamento Atma com leads e compradores.", example: "Meta ≥ 50 no KPI A do Projeto de Branding (Rafael)." },
+  { term: "Taxonomia de Canais", definition: "Modelo padronizado de classificação da origem de leads (orgânico, indicação, PR, eventos, mídia paga).", usage: "Base para atribuição de canais no CRM e medição de % canais de marca.", example: "KPI B do Branding (Rafael) depende da Governança de CRM (Leandro)." },
+  { term: "Canais de Marca", definition: "Canais que entregam leads originados pela força do posicionamento (orgânico, indicação, PR, eventos).", usage: "Indicador estratégico de saúde de marca, separado de mídia paga.", example: "Meta ≥ 30% MQL orgânico — entra oficialmente no PAR 2027." },
 ];

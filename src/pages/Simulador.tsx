@@ -13,8 +13,9 @@ import {
   computeIndividualResult,
   computeFinalSalaries,
   ebitdaMultiplier,
+  goalCompletionPct,
 } from "@/store/parStore";
-import { AlertTriangle, ShieldOff, Lock } from "lucide-react";
+import { AlertTriangle, ShieldOff, Lock, Link2 } from "lucide-react";
 import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis, CartesianGrid } from "recharts";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +38,7 @@ export default function Simulador() {
       const goals = member.goals.filter((g) => g.type === cat);
       if (goals.length === 0) return null;
       const score = goals.reduce(
-        (s, g) => s + ((completions[member.id]?.[g.id] ?? 0) / 100) * g.points,
+        (s, g) => s + (goalCompletionPct(member.id, g, completions) / 100) * g.points,
         0,
       );
       const totalPts = goals.reduce((s, g) => s + g.points, 0);
@@ -133,9 +134,17 @@ export default function Simulador() {
               </Badge>
             </div>
 
+            {member.scopeNote && (
+              <div className="mb-4 text-xs text-muted-foreground border-l-2 border-primary/40 pl-3">
+                {member.scopeNote}
+              </div>
+            )}
+
             <div className="space-y-5">
               {member.goals.map((g) => {
-                const value = completions[member.id]?.[g.id] ?? 0;
+                const hasSubs = !!g.subKpis?.length;
+                const effectivePct = goalCompletionPct(member.id, g, completions);
+                const value = hasSubs ? Math.round(effectivePct) : completions[member.id]?.[g.id] ?? 0;
                 return (
                   <div key={g.id}>
                     <div className="flex items-baseline justify-between gap-3 mb-1.5">
@@ -153,16 +162,46 @@ export default function Simulador() {
                           {g.type}
                         </span>
                         <span className="text-sm font-medium">{g.name}</span>
-                        <span className="text-xs text-muted-foreground ml-2 font-mono-data">· {g.points} pts</span>
+                        <span className="text-xs text-muted-foreground ml-2 font-mono-data">
+                          · {g.points} pts{g.cap ? ` · teto ${g.cap}%` : ""}
+                        </span>
                       </div>
                       <span className="font-mono-data text-sm tabular shrink-0">{value}%</span>
                     </div>
-                    <Slider
-                      value={[value]}
-                      max={120}
-                      step={1}
-                      onValueChange={(v) => setCompletion(member.id, g.id, v[0])}
-                    />
+                    {hasSubs ? (
+                      <div className="space-y-3 pl-3 border-l border-border/60">
+                        {g.subKpis!.map((sk) => {
+                          const sv = completions[member.id]?.[`${g.id}:${sk.id}`] ?? 0;
+                          return (
+                            <div key={sk.id}>
+                              <div className="flex items-baseline justify-between mb-1">
+                                <span className="text-xs text-foreground/85">{sk.name}</span>
+                                <span className="font-mono-data text-xs tabular">{sv}% · {sk.points}p</span>
+                              </div>
+                              <Slider
+                                value={[sv]}
+                                max={g.cap ?? 120}
+                                step={1}
+                                onValueChange={(v) => setCompletion(member.id, `${g.id}:${sk.id}`, v[0])}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <Slider
+                        value={[value]}
+                        max={g.cap ?? 120}
+                        step={1}
+                        onValueChange={(v) => setCompletion(member.id, g.id, v[0])}
+                      />
+                    )}
+                    {g.dependency && (
+                      <div className="mt-2 flex items-start gap-1.5 text-[11px] text-info">
+                        <Link2 className="h-3 w-3 shrink-0 mt-0.5" />
+                        <span>{g.dependency.note}</span>
+                      </div>
+                    )}
                   </div>
                 );
               })}
