@@ -8,8 +8,8 @@ const corporateGoals = [
   {
     icon: TrendingUp,
     title: "VGV / Receita",
-    desc: "Atma R$92M · Ária R$85,5M em 2026.",
-    members: ["Rafael", "Caetano", "Matteo", "Marlon", "Nabil", "Laís"],
+    desc: "Atma R$92M (Rafael) · Atma + Ária para Caetano e Matteo. Geradores de receita: Rafael, Leandro e Nabil.",
+    members: ["Rafael", "Leandro", "Caetano", "Matteo", "Marlon", "Nabil", "Laís"],
   },
   {
     icon: Coins,
@@ -25,15 +25,21 @@ const corporateGoals = [
   },
   {
     icon: ShieldAlert,
-    title: "VSO — Velocidade de Vendas",
-    desc: "Atma ≥ 5%/mês · Ária ≥ 30% acumulado.",
+    title: "VSO — Velocidade de Vendas Atma",
+    desc: "Atma ≥ 5%/mês. Ária fora do escopo de Rafael em 2026 (lançamento 2027).",
     members: ["Rafael", "Nabil", "Laís"],
   },
   {
     icon: Coins,
     title: "Receita Comercial Recebida",
-    desc: "≥ 90% da projeção mensal.",
-    members: ["Rafael", "Nabil"],
+    desc: "≥ 90% da projeção mensal. Leandro responde pela cadência de recebimento.",
+    members: ["Leandro", "Nabil"],
+  },
+  {
+    icon: TrendingUp,
+    title: "Pipeline Qualificado — MQL e Volume",
+    desc: "≥ 720 MQL/ano · Pipeline ≥ R$20M · MQL→SQL ≥ 15%.",
+    members: ["Leandro"],
   },
   {
     icon: Building2,
