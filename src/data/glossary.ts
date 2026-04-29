@@ -35,4 +35,7 @@ export const glossary: Term[] = [
   { term: "Milestone", definition: "Marco binário: cumprido ou não.", usage: "Usado em entregas críticas.", example: "Aprovação do 5 Year Plan." },
   { term: "DDS", definition: "Diálogo Diário de Segurança.", usage: "Indicador proativo de cultura de segurança.", example: "≥ 85% de aderência em obras." },
   { term: "Ciclo de Apuração", definition: "Período de medição do PAR.", usage: "PAR 2026 cobre jan/26 a dez/26.", example: "Apuração final em jan/27." },
+  { term: "NPS de Marca", definition: "Net Promoter Score aplicado à percepção de marca.", usage: "Mede a força do reposicionamento Atma com leads e compradores.", example: "Meta ≥ 50 no KPI A do Projeto de Branding (Rafael)." },
+  { term: "Taxonomia de Canais", definition: "Modelo padronizado de classificação da origem de leads (orgânico, indicação, PR, eventos, mídia paga).", usage: "Base para atribuição de canais no CRM e medição de % canais de marca.", example: "KPI B do Branding (Rafael) depende da Governança de CRM (Leandro)." },
+  { term: "Canais de Marca", definition: "Canais que entregam leads originados pela força do posicionamento (orgânico, indicação, PR, eventos).", usage: "Indicador estratégico de saúde de marca, separado de mídia paga.", example: "Meta ≥ 30% MQL orgânico — entra oficialmente no PAR 2027." },
 ];
