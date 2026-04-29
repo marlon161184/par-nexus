@@ -85,6 +85,11 @@ export default function Paineis() {
             </div>
           </div>
         </div>
+        {selected.scopeNote && (
+          <div className="relative mt-4 text-xs text-muted-foreground border-l-2 border-primary/40 pl-3">
+            {selected.scopeNote}
+          </div>
+        )}
       </Card>
 
       {/* Goals list */}
