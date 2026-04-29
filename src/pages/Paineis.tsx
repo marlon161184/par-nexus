@@ -106,8 +106,10 @@ export default function Paineis() {
 
         <div className="divide-y divide-border">
           {selected.goals.map((g) => {
-            const value = completions[selected.id]?.[g.id] ?? 0;
-            const pond = (value / 100) * g.points;
+            const hasSubs = !!g.subKpis?.length;
+            const effectivePct = goalCompletionPct(selected.id, g, completions);
+            const value = hasSubs ? effectivePct : completions[selected.id]?.[g.id] ?? 0;
+            const pond = (effectivePct / 100) * g.points;
             return (
               <div key={g.id} className="px-5 lg:px-6 py-5 hover:bg-secondary/20 transition-colors">
                 {/* Mobile */}
@@ -118,26 +120,55 @@ export default function Paineis() {
                       <h4 className="font-display text-lg mt-1.5">{g.name}</h4>
                     </div>
                     <div className="text-right">
-                      <div className="font-mono-data text-xs text-muted-foreground">{g.points} pts</div>
+                      <div className="font-mono-data text-xs text-muted-foreground">{g.points} pts{g.cap ? ` · teto ${g.cap}%` : ""}</div>
                       <div className="font-display text-lg gold-text tabular">{pond.toFixed(1)}</div>
                     </div>
                   </div>
                   <div className="text-xs text-muted-foreground mb-1">{g.kpi}</div>
                   <div className="text-xs text-foreground/80 mb-3">{g.target} · <span className="text-muted-foreground">{g.deadline}</span></div>
-                  <div className="flex items-center gap-3">
-                    <Slider
-                      value={[value]}
-                      max={120}
-                      step={1}
-                      onValueChange={(v) => setCompletion(selected.id, g.id, v[0])}
-                      className="flex-1"
-                    />
-                    <span className="font-mono-data text-sm w-12 text-right tabular">{value}%</span>
-                  </div>
+                  {hasSubs ? (
+                    <div className="space-y-3">
+                      {g.subKpis!.map((sk) => {
+                        const sv = completions[selected.id]?.[`${g.id}:${sk.id}`] ?? 0;
+                        return (
+                          <div key={sk.id}>
+                            <div className="flex items-baseline justify-between mb-1">
+                              <span className="text-xs font-medium">{sk.name}</span>
+                              <span className="font-mono-data text-xs tabular">{sv}% · {sk.points} pts</span>
+                            </div>
+                            <Slider
+                              value={[sv]}
+                              max={g.cap ?? 120}
+                              step={1}
+                              onValueChange={(v) => setCompletion(selected.id, `${g.id}:${sk.id}`, v[0])}
+                            />
+                            {sk.description && <p className="text-[11px] text-muted-foreground mt-1">{sk.description}</p>}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-3">
+                      <Slider
+                        value={[value]}
+                        max={g.cap ?? 120}
+                        step={1}
+                        onValueChange={(v) => setCompletion(selected.id, g.id, v[0])}
+                        className="flex-1"
+                      />
+                      <span className="font-mono-data text-sm w-12 text-right tabular">{value}%</span>
+                    </div>
+                  )}
+                  {g.dependency && (
+                    <div className="mt-3 flex items-start gap-2 text-[11px] p-2 rounded-md border border-info/30 bg-info/10 text-info">
+                      <Link2 className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                      <span>{g.dependency.note}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Desktop */}
-                <div className="hidden lg:grid grid-cols-12 gap-4 items-center">
+                <div className="hidden lg:grid grid-cols-12 gap-4 items-start">
                   <div className="col-span-2">
                     <Badge className={cn("border text-[10px]", typeColor(g.type))}>{g.type}</Badge>
                     <h4 className="font-display text-base mt-1.5 leading-tight">{g.name}</h4>
@@ -148,22 +179,52 @@ export default function Paineis() {
                   </div>
                   <div className="col-span-2">
                     <div className="text-sm">{g.target}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">{g.deadline}</div>
-                  </div>
-                  <div className="col-span-1 text-center font-mono-data text-sm tabular">{g.points}</div>
-                  <div className="col-span-3">
-                    <div className="flex items-center gap-3">
-                      <Slider
-                        value={[value]}
-                        max={120}
-                        step={1}
-                        onValueChange={(v) => setCompletion(selected.id, g.id, v[0])}
-                        className="flex-1"
-                      />
-                      <span className="font-mono-data text-sm w-12 text-right tabular">{value}%</span>
+                    <div className="text-[11px] text-muted-foreground mt-0.5">
+                      {g.deadline}{g.cap ? ` · teto ${g.cap}%` : ""}
                     </div>
                   </div>
-                  <div className="col-span-1 text-right font-display text-lg gold-text tabular">
+                  <div className="col-span-1 text-center font-mono-data text-sm tabular pt-1">{g.points}</div>
+                  <div className="col-span-3">
+                    {hasSubs ? (
+                      <div className="space-y-3">
+                        {g.subKpis!.map((sk) => {
+                          const sv = completions[selected.id]?.[`${g.id}:${sk.id}`] ?? 0;
+                          return (
+                            <div key={sk.id}>
+                              <div className="flex items-baseline justify-between mb-1">
+                                <span className="text-[11px] text-foreground/85 truncate pr-2">{sk.name}</span>
+                                <span className="font-mono-data text-[11px] tabular shrink-0">{sv}% · {sk.points}p</span>
+                              </div>
+                              <Slider
+                                value={[sv]}
+                                max={g.cap ?? 120}
+                                step={1}
+                                onValueChange={(v) => setCompletion(selected.id, `${g.id}:${sk.id}`, v[0])}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-3">
+                        <Slider
+                          value={[value]}
+                          max={g.cap ?? 120}
+                          step={1}
+                          onValueChange={(v) => setCompletion(selected.id, g.id, v[0])}
+                          className="flex-1"
+                        />
+                        <span className="font-mono-data text-sm w-12 text-right tabular">{value}%</span>
+                      </div>
+                    )}
+                    {g.dependency && (
+                      <div className="mt-2 flex items-start gap-1.5 text-[11px] text-info">
+                        <Link2 className="h-3 w-3 shrink-0 mt-0.5" />
+                        <span>{g.dependency.note}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="col-span-1 text-right font-display text-lg gold-text tabular pt-1">
                     {pond.toFixed(1)}
                   </div>
                 </div>
