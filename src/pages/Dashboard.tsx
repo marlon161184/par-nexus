@@ -69,13 +69,13 @@ export default function Dashboard() {
       <SectionHeader
         eyebrow="Ciclo 2026 · Visão Executiva"
         title="Programa de Participação Anual nos Resultados"
-        description="Visão consolidada das três frentes de avaliação, do gatilho corporativo e da projeção de bônus dos 11 elegíveis."
+        description="Visão consolidada das três frentes de avaliação, do gatilho corporativo e da projeção de bônus dos 10 elegíveis."
         right={<ConfidentialBadge>Documento Confidencial</ConfidentialBadge>}
       />
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        <SummaryCard icon={Users} label="Total Elegíveis" value="11" hint="Liderança Hyndra · Newe" />
+        <SummaryCard icon={Users} label="Total Elegíveis" value="10" hint="Liderança Hyndra · Newe" />
         <SummaryCard icon={Calendar} label="Ciclo" value="2026" hint="Janeiro a Dezembro" />
         <SummaryCard icon={Activity} label="Status" value="Em andamento" tone="gold" />
         <SummaryCard
@@ -141,7 +141,7 @@ export default function Dashboard() {
           {!regraOk && (
             <div className="mt-4 flex items-start gap-2 text-xs p-3 rounded-md border border-destructive/40 bg-destructive/10 text-destructive">
               <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
-              <span>Bônus zerado para todos os 11 elegíveis.</span>
+              <span>Bônus zerado para todos os 10 elegíveis.</span>
             </div>
           )}
         </Card>

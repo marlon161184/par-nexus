@@ -9,7 +9,7 @@ const corporateGoals = [
     icon: TrendingUp,
     title: "VGV / Receita",
     desc: "Atma R$92M (Rafael) · Atma + Ária para Caetano e Matteo. Geradores de receita: Rafael, Leandro e Nabil.",
-    members: ["Rafael", "Leandro", "Caetano", "Matteo", "Marlon", "Nabil", "Laís"],
+    members: ["Rafael", "Leandro", "Caetano", "Matteo", "Marlon", "Nabil"],
   },
   {
     icon: Coins,
@@ -27,7 +27,7 @@ const corporateGoals = [
     icon: ShieldAlert,
     title: "VSO — Velocidade de Vendas Atma",
     desc: "Atma ≥ 5%/mês. Ária fora do escopo de Rafael em 2026 (lançamento 2027).",
-    members: ["Rafael", "Nabil", "Laís"],
+    members: ["Rafael", "Nabil"],
   },
   {
     icon: Coins,

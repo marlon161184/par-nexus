@@ -115,7 +115,7 @@ export const members: Member[] = [
     company: "Newe Urbanismo",
     salaryMultiplier: 4,
     gradient: "from-sky-500 to-indigo-700",
-    scopeNote: "Filtro operacional entre a visão do Diretor e a execução de Nabil e Laís. Responsável por execução comercial, disciplina de processo e dados.",
+    scopeNote: "Filtro operacional entre a visão do Diretor e a execução de Nabil. Responsável por execução comercial, disciplina de processo e dados.",
     goals: [
       g("le1", "Corporativa", "Receita Comercial Recebida", 20, "Receita recebida vs. projeção mensal", "≥ 90% da projeção mensal de receitas recebidas", "dez/26", "Rafael, Leandro e Nabil são co-responsáveis — Leandro responde pela cadência de recebimento.", "Financeiro (Matteo) + CRM", { cap: 120 }),
       g("le2", "Corporativa", "Pipeline Qualificado — MQL e Volume", 15, "Volume MQL + taxa de conversão do funil", "≥ 720 MQL/ano · Pipeline ≥ R$20M · MQL→SQL ≥ 15%", "dez/26", "", "CRM (Gustavo Garcia)", { cap: 120 }),
@@ -198,22 +198,6 @@ export const members: Member[] = [
       g("n4", "Individual", "Conversão Comercial", 25, "Visitas → Vendas", "≥ 50%", "dez/26", "", "CRM"),
       g("n5", "Individual", "Disciplina Comercial", 15, "Propostas validadas + SLA contratos", "100% propostas validadas · Contratos ≤ 7 dias", "dez/26", "", "CRM + Jurídico"),
       g("n6", "Individual", "Acurácia de Forecast", 10, "Desvio do forecast mensal", "≥ 8/12 meses com desvio ≤ 15%", "dez/26", "", "CRM"),
-    ],
-  },
-  {
-    id: "lais",
-    name: "Laís Machado",
-    role: "Gerente de Marketing",
-    company: "Newe Urbanismo",
-    salaryMultiplier: 3,
-    gradient: "from-fuchsia-500 to-pink-700",
-    goals: [
-      g("l1", "Corporativa", "VGV / Receita", 15, "Contribuição de marketing para demanda", "Geração de demanda qualificada para Atma", "dez/26", "", "CRM + Relatório MKT"),
-      g("l2", "Corporativa", "VSO", 10, "VSO mensal Atma", "Atma ≥ 5%/mês", "dez/26", "", "Relatório Comercial"),
-      g("l3", "Individual", "Geração de Leads", 20, "Volume de leads/ano", "≥ 720 leads/ano", "dez/26", "", "CRM"),
-      g("l4", "Individual", "Leads Qualificados + Funil", 25, "% MQL · MQL→SQL", "≥ 5% MQL · MQL→SQL ≥ 15%", "dez/26", "", "CRM"),
-      g("l5", "Individual", "CAC — Custo de Aquisição", 20, "CAC por unidade vendida", "Atma ≤ R$15k/unidade", "dez/26", "", "Financeiro + CRM"),
-      g("l6", "Individual", "Governança de Marca", 10, "Campanhas sem retrabalho", "100% campanhas sem retrabalho por compliance", "dez/26", "", "Relatório MKT"),
     ],
   },
   {
