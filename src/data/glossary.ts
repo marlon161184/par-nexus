@@ -12,7 +12,7 @@ export const glossary: Term[] = [
   { term: "Frente de Avaliação", definition: "Eixo no qual o desempenho é medido.", usage: "PAR 2026 possui 3 frentes: Gatilho, Regra de Ouro e Metas.", example: "Frente 1 = EBITDA corporativo." },
   { term: "Meta Corporativa", definition: "Meta da companhia, compartilhada por vários elegíveis.", usage: "Reflete resultado coletivo (VGV, EBITDA, custos).", example: "Controle de Custos de Obra para Fernando e Rogério." },
   { term: "Meta Individual", definition: "Meta específica do papel do executivo.", usage: "Mede entrega pessoal e diferenciação.", example: "Lançamento Ária para Fernando." },
-  { term: "Regra de Ouro", definition: "Critério eliminatório: zero acidente com afastamento > 90 dias.", usage: "Se violada, zera o bônus de todos os 11 elegíveis.", example: "Acidente grave registrado → bônus = 0." },
+  { term: "Regra de Ouro", definition: "Critério eliminatório: zero acidente com afastamento > 90 dias.", usage: "Se violada, zera o bônus de todos os 10 elegíveis.", example: "Acidente grave registrado → bônus = 0." },
   { term: "KPI", definition: "Key Performance Indicator — indicador-chave de desempenho.", usage: "Define como cada meta é medida objetivamente.", example: "KPI de VSO = unidades vendidas / oferta." },
   { term: "Pontos por Meta", definition: "Peso da meta no painel individual (escala 100).", usage: "Quanto mais estratégica, mais pontos.", example: "Custos de Obra para Rogério vale 30 pts." },
   { term: "Pontuação Ponderada", definition: "Resultado parcial da meta = % atingido × pontos.", usage: "Soma compõe o resultado individual final.", example: "100% × 25 pts = 25 pts." },
