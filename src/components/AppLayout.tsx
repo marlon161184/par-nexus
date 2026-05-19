@@ -64,7 +64,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <h1 className="font-display text-xl">
           PAR <span className="gold-text">2026</span>
         </h1>
-        <span className="ml-auto text-[10px] uppercase tracking-widest text-muted-foreground">Hyndra · Newe</span>
+        <span className="ml-auto font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Hyndra · Newe</span>
       </div>
 
       <main className="flex-1 min-w-0 pt-14 lg:pt-0 pb-24 lg:pb-0">
