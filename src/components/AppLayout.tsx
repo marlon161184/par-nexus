@@ -22,9 +22,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen">
         <div className="px-7 pt-8 pb-6">
           <div className="flex items-center gap-4 h-7 mb-5 opacity-90">
-            <img src={logoHyndra} alt="Hyndra" className="h-5 w-auto object-contain" />
+            <img src={logoHyndra} alt="Hyndra" className="h-6 w-24 object-contain" />
             <span className="h-4 w-px bg-border/60" />
-            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-auto object-contain" />
+            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-24 object-contain" />
           </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             Hyndra · Newe
@@ -70,9 +70,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
       {/* Mobile top bar */}
       <div className="lg:hidden fixed top-0 inset-x-0 z-40 h-14 bg-sidebar/95 backdrop-blur border-b border-sidebar-border flex items-center px-5 gap-3">
-        <img src={logoHyndra} alt="Hyndra" className="h-4 w-auto object-contain opacity-90" />
+        <img src={logoHyndra} alt="Hyndra" className="h-5 w-20 object-contain opacity-90" />
         <span className="h-3 w-px bg-border/60" />
-        <img src={logoNewe} alt="Newe" className="h-5 w-auto object-contain opacity-90" />
+        <img src={logoNewe} alt="Newe" className="h-5 w-20 object-contain opacity-90" />
         <h1 className="ml-auto font-display text-lg">
           PAR <span className="gold-text">2026</span>
         </h1>
@@ -82,9 +82,9 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-8 lg:py-12 animate-fade-in">{children}</div>
         <footer className="hidden lg:flex flex-col items-center gap-4 py-10 border-t border-border/40 mt-12">
           <div className="flex items-center gap-5 opacity-80">
-            <img src={logoHyndra} alt="Hyndra" className="h-5 w-auto object-contain" />
+            <img src={logoHyndra} alt="Hyndra" className="h-6 w-24 object-contain" />
             <span className="h-4 w-px bg-border/60" />
-            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-auto object-contain" />
+            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-24 object-contain" />
           </div>
           <div className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             Confidencial · Ciclo 2026 · Hyndra Participações · Newe Urbanismo
