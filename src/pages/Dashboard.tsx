@@ -220,12 +220,12 @@ export default function Dashboard() {
               </Bar>
               <defs>
                 <linearGradient id="goldGrad0" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="hsl(41 49% 49%)" />
-                  <stop offset="100%" stopColor="hsl(41 65% 64%)" />
+                  <stop offset="0%" stopColor="hsl(160 64% 32%)" />
+                  <stop offset="100%" stopColor="hsl(152 58% 52%)" />
                 </linearGradient>
                 <linearGradient id="goldGrad1" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="hsl(41 49% 42%)" />
-                  <stop offset="100%" stopColor="hsl(41 60% 58%)" />
+                  <stop offset="0%" stopColor="hsl(168 70% 26%)" />
+                  <stop offset="100%" stopColor="hsl(150 55% 48%)" />
                 </linearGradient>
               </defs>
             </BarChart>

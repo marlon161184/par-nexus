@@ -64,7 +64,7 @@ export const members: Member[] = [
     role: "Superintendente de Operações",
     company: "Newe Urbanismo",
     salaryMultiplier: 5,
-    gradient: "from-amber-500 to-rose-600",
+    gradient: "from-emerald-400 to-emerald-700",
     goals: [
       g("f1", "Corporativa", "Controle de Custos de Obra", 25, "Custo Obra Atma + Ária dentro do orçamento", "Fórmula inversa teto 120%", "dez/26", "", "Relatório de Obras"),
       g("f2", "Corporativa", "Fluxo de Caixa", 20, "Exposição máxima de caixa", "≤ R$50M de exposição", "dez/26", "", "Financeiro (Matteo)"),
@@ -80,7 +80,7 @@ export const members: Member[] = [
     role: "Diretor Comercial & Marketing",
     company: "Newe Urbanismo",
     salaryMultiplier: 4,
-    gradient: "from-emerald-500 to-teal-700",
+    gradient: "from-green-500 to-emerald-800",
     scopeNote: "Escopo 2026: Atma · Branding · Novos Negócios. Ária fora do escopo — lançamento previsto para 2027.",
     goals: [
       g("r1", "Corporativa", "VGV / Receita — Atma", 25, "VGV vendido Atma", "Atma ≥ R$92M", "dez/26", "Rafael, Leandro e Nabil são co-responsáveis como geradores de receita.", "CRM + Financeiro"),
@@ -114,7 +114,7 @@ export const members: Member[] = [
     role: "Head Comercial & Marketing da Operação",
     company: "Newe Urbanismo",
     salaryMultiplier: 4,
-    gradient: "from-sky-500 to-indigo-700",
+    gradient: "from-teal-400 to-emerald-700",
     scopeNote: "Filtro operacional entre a visão do Diretor e a execução de Nabil. Responsável por execução comercial, disciplina de processo e dados.",
     goals: [
       g("le1", "Corporativa", "Receita Comercial Recebida", 20, "Receita recebida vs. projeção mensal", "≥ 90% da projeção mensal de receitas recebidas", "dez/26", "Rafael, Leandro e Nabil são co-responsáveis — Leandro responde pela cadência de recebimento.", "Financeiro (Matteo) + CRM", { cap: 120 }),
@@ -142,7 +142,7 @@ export const members: Member[] = [
     role: "Head de PPA",
     company: "Newe Urbanismo",
     salaryMultiplier: 4,
-    gradient: "from-indigo-500 to-blue-800",
+    gradient: "from-emerald-500 to-teal-800",
     goals: [
       g("c1", "Corporativa", "VGV / Receita", 20, "VGV vendido Atma + Ária", "Atma R$92M · Ária R$85,5M", "dez/26", "", "CRM + Financeiro"),
       g("c2", "Corporativa", "Controle de Custos de Obra", 20, "Custo de obra vs. orçamento", "Fórmula inversa teto 120%", "dez/26", "", "Relatório de Obras"),
@@ -158,7 +158,7 @@ export const members: Member[] = [
     role: "Head Financeiro & Investimentos",
     company: "Hyndra / Newe",
     salaryMultiplier: 4,
-    gradient: "from-violet-500 to-purple-800",
+    gradient: "from-lime-500 to-emerald-700",
     goals: [
       g("m1", "Corporativa", "VGV / Receita", 20, "VGV vendido Atma + Ária", "Atma R$92M · Ária R$85,5M", "dez/26", "", "CRM + Financeiro"),
       g("m2", "Corporativa", "Fluxo de Caixa", 25, "Exposição máxima de caixa", "≤ R$50M de exposição", "dez/26", "", "Relatório Financeiro"),
@@ -173,7 +173,7 @@ export const members: Member[] = [
     role: "Head de Pessoas e Cultura",
     company: "Hyndra / Newe",
     salaryMultiplier: 4,
-    gradient: "from-pink-500 to-rose-700",
+    gradient: "from-green-400 to-teal-700",
     goals: [
       g("ma1", "Corporativa", "VGV / Receita", 20, "Capacidade organizacional para suportar VGV", "Estrutura de time C&M completa e operacional", "dez/26", "", "RH + Comitê"),
       g("ma2", "Corporativa", "Custo de Pessoas", 20, "Folha + encargos vs. orçamento", "Dentro do orçamento aprovado", "dez/26", "", "Financeiro (Matteo)"),
@@ -189,7 +189,7 @@ export const members: Member[] = [
     role: "Gerente de Vendas",
     company: "Newe Urbanismo",
     salaryMultiplier: 3,
-    gradient: "from-orange-500 to-red-700",
+    gradient: "from-emerald-600 to-green-900",
     scopeNote: "Co-responsável como gerador de receita junto com Rafael e Leandro — papel de execução e fechamento.",
     goals: [
       g("n1", "Corporativa", "VGV / Receita", 25, "VGV gerado por conversão e fechamento", "Conforme target Atma", "dez/26", "", "CRM + Financeiro"),
@@ -206,7 +206,7 @@ export const members: Member[] = [
     role: "Gerente de Obras",
     company: "Newe Urbanismo",
     salaryMultiplier: 3,
-    gradient: "from-amber-600 to-yellow-800",
+    gradient: "from-teal-500 to-green-800",
     goals: [
       g("ro1", "Corporativa", "Controle de Custos de Obra", 30, "Custo de obra vs. orçamento", "Fórmula inversa teto 120%", "dez/26", "", "Relatório de Obras"),
       g("ro2", "Individual", "Andamento Físico de Obras", 20, "% execução física", "Atma 65% · Ária 15%", "dez/26", "", "Relatório de Obras"),
@@ -221,7 +221,7 @@ export const members: Member[] = [
     role: "Gerente de Planejamento",
     company: "Newe Urbanismo",
     salaryMultiplier: 3,
-    gradient: "from-cyan-500 to-blue-800",
+    gradient: "from-emerald-500 to-green-700",
     goals: [
       g("mb1", "Corporativa", "Fluxo de Caixa — Previsibilidade", 20, "Acurácia por empreendimento", "Atma R$26M · Ária R$10M · Teto 120%", "dez/26", "", "Financeiro (Matteo)"),
       g("mb2", "Individual", "Andamento Físico", 30, "% execução vs. baseline", "65% do baseline aprovado", "dez/26", "", "Relatório de Obras"),
@@ -235,7 +235,7 @@ export const members: Member[] = [
     role: "Especialista de T.I",
     company: "Hyndra / Newe",
     salaryMultiplier: 3,
-    gradient: "from-slate-500 to-zinc-800",
+    gradient: "from-green-600 to-emerald-900",
     goals: [
       g("gu1", "Corporativa", "Fluxo de Caixa", 20, "Sistemas de suporte à exposição máxima", "Exposição máxima R$50M", "dez/26", "", "Financeiro (Matteo)"),
       g("gu2", "Individual", "Controles Sistêmicos no Mega", 25, "Fluxos + matriz de perfil + relatório", "3 entregas concluídas", "set/26", "", "TI + Financeiro"),
