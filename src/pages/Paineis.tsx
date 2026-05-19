@@ -1,3 +1,4 @@
+import { HyndraWatermark } from "@/components/HyndraWatermark";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
@@ -58,7 +59,7 @@ export default function Paineis() {
       />
 
       {/* Header card */}
-      <Card className="luxe-card p-6 mb-6 relative overflow-hidden">
+      <Card className="luxe-card p-6 mb-6 relative overflow-hidden"><HyndraWatermark size={180} opacity={0.05} />
         <div className="absolute inset-0 bg-gradient-gold-soft pointer-events-none" />
         <div className="relative flex flex-col md:flex-row md:items-center gap-5">
           <MemberAvatar name={selected.name} gradient={selected.gradient} size="lg" />
@@ -93,7 +94,7 @@ export default function Paineis() {
       </Card>
 
       {/* Goals list */}
-      <Card className="luxe-card overflow-hidden">
+      <Card className="luxe-card overflow-hidden relative"><HyndraWatermark size={180} opacity={0.04} />
         {/* Desktop table header */}
         <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-3 text-[10px] uppercase tracking-widest text-muted-foreground border-b border-border bg-secondary/40">
           <div className="col-span-2">Tipo / Meta</div>

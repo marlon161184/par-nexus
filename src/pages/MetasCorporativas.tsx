@@ -1,3 +1,4 @@
+import { HyndraWatermark } from "@/components/HyndraWatermark";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -63,19 +64,19 @@ export default function MetasCorporativas() {
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <Card className="luxe-card p-5">
+        <Card className="luxe-card p-5 relative overflow-hidden"><HyndraWatermark size={110} opacity={0.04} />
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Metas corporativas</div>
           <div className="font-display text-3xl mt-2 tabular gold-text">{corporateGoals.length}</div>
         </Card>
-        <Card className="luxe-card p-5">
+        <Card className="luxe-card p-5 relative overflow-hidden"><HyndraWatermark size={110} opacity={0.04} />
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Elegíveis impactados</div>
           <div className="font-display text-3xl mt-2 tabular">{totalMembersAffected}</div>
         </Card>
-        <Card className="luxe-card p-5">
+        <Card className="luxe-card p-5 relative overflow-hidden"><HyndraWatermark size={110} opacity={0.04} />
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Gatilho</div>
           <div className="font-display text-3xl mt-2">EBITDA</div>
         </Card>
-        <Card className="luxe-card p-5">
+        <Card className="luxe-card p-5 relative overflow-hidden"><HyndraWatermark size={110} opacity={0.04} />
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Eliminatória</div>
           <div className="font-display text-3xl mt-2">Regra de Ouro</div>
         </Card>
@@ -83,7 +84,7 @@ export default function MetasCorporativas() {
 
       <div className="grid md:grid-cols-2 gap-5">
         {corporateGoals.map((g) => (
-          <Card key={g.title} className="luxe-card p-6 group hover:border-primary/40 transition-all">
+          <Card key={g.title} className="luxe-card p-6 group hover:border-primary/40 transition-all relative overflow-hidden"><HyndraWatermark size={160} opacity={0.05} />
             <div className="flex items-start gap-4">
               <div className="h-11 w-11 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                 <g.icon className="h-5 w-5 text-primary" />
