@@ -69,8 +69,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
       <main className="flex-1 min-w-0 pt-14 lg:pt-0 pb-24 lg:pb-0">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-8 lg:py-12 animate-fade-in">{children}</div>
-        <footer className="hidden lg:block text-center text-[11px] text-muted-foreground py-8 border-t border-border/40 mt-12">
-          Documento Confidencial · Ciclo 2026 · Hyndra Participações · Newe Urbanismo
+        <footer className="hidden lg:block text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground py-8 border-t border-border/40 mt-12">
+          Confidencial · Ciclo 2026 · Hyndra Participações · Newe Urbanismo
         </footer>
       </main>
 
