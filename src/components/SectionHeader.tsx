@@ -17,13 +17,13 @@ export function SectionHeader({
     <div className={cn("flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8", className)}>
       <div>
         {eyebrow && (
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-primary/80 mb-3">
-            <span className="h-px w-6 bg-primary/60" />
+          <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            <span className="h-px w-8 bg-primary/50" />
             {eyebrow}
           </div>
         )}
-        <h2 className="font-display text-3xl md:text-4xl leading-tight max-w-3xl">{title}</h2>
-        {description && <p className="text-muted-foreground mt-3 max-w-2xl">{description}</p>}
+        <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight font-light max-w-3xl">{title}</h2>
+        {description && <p className="text-muted-foreground mt-4 max-w-2xl leading-relaxed">{description}</p>}
       </div>
       {right}
     </div>
