@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', "serif"],
-        body: ['"DM Sans"', "sans-serif"],
-        mono: ['"DM Mono"', "ui-monospace", "monospace"],
+        display: ['"Plus Jakarta Sans"', "sans-serif"],
+        body: ['"Outfit"', "sans-serif"],
+        mono: ['"Space Mono"', "ui-monospace", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
