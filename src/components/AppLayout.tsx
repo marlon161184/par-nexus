@@ -1,6 +1,9 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { LayoutDashboard, Users, Target, BarChart3, Calculator, BookOpen, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoHyndra from "@/assets/logo-hyndra.png";
+import logoNewe from "@/assets/logo-newe.png";
+
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard, num: "01" },
