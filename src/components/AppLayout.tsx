@@ -21,16 +21,22 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Sidebar (desktop) */}
       <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen">
         <div className="px-7 pt-8 pb-6">
+          <div className="flex items-center gap-4 h-7 mb-5 opacity-90">
+            <img src={logoHyndra} alt="Hyndra" className="h-5 w-auto object-contain" />
+            <span className="h-4 w-px bg-border/60" />
+            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-auto object-contain" />
+          </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             Hyndra · Newe
           </div>
-          <h1 className="font-display text-4xl mt-4 leading-none tracking-tight font-light">
+          <h1 className="font-display text-4xl mt-3 leading-none tracking-tight font-light">
             PAR <span className="gold-text">2026</span>
           </h1>
           <p className="text-[11px] text-muted-foreground mt-3 max-w-[22ch] leading-relaxed">
             Plataforma de Resultados · Programa de Participação Anual
           </p>
         </div>
+
         <div className="gold-rule mx-7" />
         <nav className="flex-1 px-4 py-6 space-y-0.5 overflow-y-auto">
           {navItems.map((it) => {
