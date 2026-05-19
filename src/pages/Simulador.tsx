@@ -1,3 +1,4 @@
+import { HyndraWatermark } from "@/components/HyndraWatermark";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
@@ -59,7 +60,7 @@ export default function Simulador() {
         {/* Left — controls */}
         <div className="space-y-6">
           {/* Top controls */}
-          <Card className="luxe-card p-6">
+          <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
             <div className="grid md:grid-cols-3 gap-5">
               <div>
                 <label className="text-[11px] uppercase tracking-widest text-muted-foreground">Elegível</label>
@@ -123,7 +124,7 @@ export default function Simulador() {
           </Card>
 
           {/* Goal sliders */}
-          <Card className="luxe-card p-6">
+          <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
             <div className="flex items-center justify-between mb-5">
               <div>
                 <h3 className="font-display text-xl">Metas — {member.name}</h3>
@@ -209,7 +210,7 @@ export default function Simulador() {
           </Card>
 
           {/* Bar chart */}
-          <Card className="luxe-card p-6">
+          <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
             <h3 className="font-display text-xl mb-1">Pontuação por categoria</h3>
             <p className="text-xs text-muted-foreground mb-4">
               Pontos ponderados acumulados em cada frente
