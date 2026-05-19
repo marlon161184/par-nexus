@@ -3,12 +3,12 @@ import { LayoutDashboard, Users, Target, BarChart3, Calculator, BookOpen, Lock }
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
-  { to: "/elegiveis", label: "Elegíveis", icon: Users },
-  { to: "/metas", label: "Metas Corporativas", icon: Target },
-  { to: "/paineis", label: "Painéis Individuais", icon: BarChart3 },
-  { to: "/simulador", label: "Simulador de Bônus", icon: Calculator },
-  { to: "/glossario", label: "Glossário", icon: BookOpen },
+  { to: "/", label: "Dashboard", icon: LayoutDashboard, num: "01" },
+  { to: "/elegiveis", label: "Elegíveis", icon: Users, num: "02" },
+  { to: "/metas", label: "Metas Corporativas", icon: Target, num: "03" },
+  { to: "/paineis", label: "Painéis Individuais", icon: BarChart3, num: "04" },
+  { to: "/simulador", label: "Simulador de Bônus", icon: Calculator, num: "05" },
+  { to: "/glossario", label: "Glossário", icon: BookOpen, num: "06" },
 ];
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
