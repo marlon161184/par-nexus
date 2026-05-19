@@ -6,7 +6,9 @@ import { members } from "@/data/members";
 import { useParStore, computeIndividualResult } from "@/store/parStore";
 import { MemberAvatar } from "@/components/MemberAvatar";
 import { SectionHeader } from "@/components/SectionHeader";
+import { HyndraWatermark } from "@/components/HyndraWatermark";
 import { ArrowRight, Lock } from "lucide-react";
+
 
 export default function Elegiveis() {
   const { completions } = useParStore();
