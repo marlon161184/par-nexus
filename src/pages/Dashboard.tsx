@@ -6,6 +6,8 @@ import { Switch } from "@/components/ui/switch";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ConfidentialBadge } from "@/components/ConfidentialBadge";
 import { useParStore, computeIndividualResult, computeFinalSalaries } from "@/store/parStore";
+import { HyndraWatermark } from "@/components/HyndraWatermark";
+
 import { members } from "@/data/members";
 import { Users, Calendar, Activity, ShieldCheck, AlertTriangle, TrendingUp, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -35,7 +37,9 @@ const SummaryCard = ({
 }) => (
   <Card className="luxe-card p-5 relative overflow-hidden">
     {tone === "gold" && <div className="absolute inset-0 bg-gradient-gold-soft pointer-events-none" />}
+    <HyndraWatermark size={110} opacity={0.04} />
     <div className="relative flex items-start justify-between">
+
       <div>
         <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{label}</div>
         <div className="font-display text-3xl mt-2 tabular">{value}</div>
@@ -90,7 +94,7 @@ export default function Dashboard() {
       {/* Frentes */}
       <div className="grid lg:grid-cols-3 gap-5 mb-10">
         {/* Frente 1 */}
-        <Card className="luxe-card p-6">
+        <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
           <div className="flex items-center justify-between">
             <Badge className="bg-info/15 text-info border-info/30 hover:bg-info/15">Frente 1</Badge>
             <span
@@ -121,7 +125,7 @@ export default function Dashboard() {
         </Card>
 
         {/* Frente 2 */}
-        <Card className="luxe-card p-6">
+        <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
           <div className="flex items-center justify-between">
             <Badge className="bg-destructive/15 text-destructive border-destructive/30 hover:bg-destructive/15">
               Frente 2 · Eliminatória
@@ -147,7 +151,7 @@ export default function Dashboard() {
         </Card>
 
         {/* Frente 3 */}
-        <Card className="luxe-card p-6">
+        <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
           <div className="flex items-center justify-between">
             <Badge className="bg-primary/15 text-primary border-primary/30 hover:bg-primary/15">Frente 3</Badge>
             <span className="text-[11px] uppercase tracking-widest text-primary/80">Médio Ciclo</span>
@@ -174,7 +178,7 @@ export default function Dashboard() {
       </div>
 
       {/* Bar chart */}
-      <Card className="luxe-card p-6">
+      <Card className="luxe-card p-6 relative overflow-hidden"><HyndraWatermark size={160} opacity={0.04} />
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="text-[11px] uppercase tracking-[0.2em] text-primary/80">Projeção</div>

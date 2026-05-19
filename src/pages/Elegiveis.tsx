@@ -6,7 +6,9 @@ import { members } from "@/data/members";
 import { useParStore, computeIndividualResult } from "@/store/parStore";
 import { MemberAvatar } from "@/components/MemberAvatar";
 import { SectionHeader } from "@/components/SectionHeader";
+import { HyndraWatermark } from "@/components/HyndraWatermark";
 import { ArrowRight, Lock } from "lucide-react";
+
 
 export default function Elegiveis() {
   const { completions } = useParStore();
@@ -26,9 +28,11 @@ export default function Elegiveis() {
           return (
             <Card
               key={m.id}
-              className="luxe-card p-5 group hover:border-primary/40 hover:shadow-gold transition-all"
+              className="luxe-card p-5 group hover:border-primary/40 hover:shadow-gold transition-all relative overflow-hidden"
             >
-              <div className="flex items-start gap-4">
+              <HyndraWatermark size={130} opacity={0.05} />
+              <div className="relative flex items-start gap-4">
+
                 <MemberAvatar name={m.name} gradient={m.gradient} size="lg" />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-display text-lg leading-tight truncate">{m.name}</h3>

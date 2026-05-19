@@ -1,6 +1,9 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { LayoutDashboard, Users, Target, BarChart3, Calculator, BookOpen, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoHyndra from "@/assets/logo-hyndra.png";
+import logoNewe from "@/assets/logo-newe.png";
+
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard, num: "01" },
@@ -18,16 +21,22 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Sidebar (desktop) */}
       <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen">
         <div className="px-7 pt-8 pb-6">
+          <div className="flex items-center gap-4 h-7 mb-5 opacity-90">
+            <img src={logoHyndra} alt="Hyndra" className="h-5 w-auto object-contain" />
+            <span className="h-4 w-px bg-border/60" />
+            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-auto object-contain" />
+          </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             Hyndra · Newe
           </div>
-          <h1 className="font-display text-4xl mt-4 leading-none tracking-tight font-light">
+          <h1 className="font-display text-4xl mt-3 leading-none tracking-tight font-light">
             PAR <span className="gold-text">2026</span>
           </h1>
           <p className="text-[11px] text-muted-foreground mt-3 max-w-[22ch] leading-relaxed">
             Plataforma de Resultados · Programa de Participação Anual
           </p>
         </div>
+
         <div className="gold-rule mx-7" />
         <nav className="flex-1 px-4 py-6 space-y-0.5 overflow-y-auto">
           {navItems.map((it) => {
@@ -60,19 +69,29 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Mobile top bar */}
-      <div className="lg:hidden fixed top-0 inset-x-0 z-40 h-14 bg-sidebar/95 backdrop-blur border-b border-sidebar-border flex items-center px-5">
-        <h1 className="font-display text-xl">
+      <div className="lg:hidden fixed top-0 inset-x-0 z-40 h-14 bg-sidebar/95 backdrop-blur border-b border-sidebar-border flex items-center px-5 gap-3">
+        <img src={logoHyndra} alt="Hyndra" className="h-4 w-auto object-contain opacity-90" />
+        <span className="h-3 w-px bg-border/60" />
+        <img src={logoNewe} alt="Newe" className="h-5 w-auto object-contain opacity-90" />
+        <h1 className="ml-auto font-display text-lg">
           PAR <span className="gold-text">2026</span>
         </h1>
-        <span className="ml-auto font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Hyndra · Newe</span>
       </div>
 
       <main className="flex-1 min-w-0 pt-14 lg:pt-0 pb-24 lg:pb-0">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-8 lg:py-12 animate-fade-in">{children}</div>
-        <footer className="hidden lg:block text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground py-8 border-t border-border/40 mt-12">
-          Confidencial · Ciclo 2026 · Hyndra Participações · Newe Urbanismo
+        <footer className="hidden lg:flex flex-col items-center gap-4 py-10 border-t border-border/40 mt-12">
+          <div className="flex items-center gap-5 opacity-80">
+            <img src={logoHyndra} alt="Hyndra" className="h-5 w-auto object-contain" />
+            <span className="h-4 w-px bg-border/60" />
+            <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-auto object-contain" />
+          </div>
+          <div className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            Confidencial · Ciclo 2026 · Hyndra Participações · Newe Urbanismo
+          </div>
         </footer>
       </main>
+
 
       {/* Bottom nav (mobile) */}
       <nav className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-sidebar/95 backdrop-blur border-t border-sidebar-border">
