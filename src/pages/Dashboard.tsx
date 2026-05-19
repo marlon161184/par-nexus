@@ -6,6 +6,8 @@ import { Switch } from "@/components/ui/switch";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ConfidentialBadge } from "@/components/ConfidentialBadge";
 import { useParStore, computeIndividualResult, computeFinalSalaries } from "@/store/parStore";
+import { HyndraWatermark } from "@/components/HyndraWatermark";
+
 import { members } from "@/data/members";
 import { Users, Calendar, Activity, ShieldCheck, AlertTriangle, TrendingUp, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
