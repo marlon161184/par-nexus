@@ -37,7 +37,9 @@ const SummaryCard = ({
 }) => (
   <Card className="luxe-card p-5 relative overflow-hidden">
     {tone === "gold" && <div className="absolute inset-0 bg-gradient-gold-soft pointer-events-none" />}
+    <HyndraWatermark size={110} opacity={0.04} />
     <div className="relative flex items-start justify-between">
+
       <div>
         <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{label}</div>
         <div className="font-display text-3xl mt-2 tabular">{value}</div>
