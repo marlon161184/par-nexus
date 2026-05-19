@@ -18,19 +18,18 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Sidebar (desktop) */}
       <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen">
         <div className="px-7 pt-8 pb-6">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            <span className="h-px w-6 bg-primary/60" />
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
             Hyndra · Newe
           </div>
-          <h1 className="font-display text-3xl mt-3 leading-none">
+          <h1 className="font-display text-4xl mt-4 leading-none tracking-tight font-light">
             PAR <span className="gold-text">2026</span>
           </h1>
-          <p className="text-xs text-muted-foreground mt-2 max-w-[18ch]">
-            Programa de Participação Anual nos Resultados
+          <p className="text-[11px] text-muted-foreground mt-3 max-w-[22ch] leading-relaxed">
+            Plataforma de Resultados · Programa de Participação Anual
           </p>
         </div>
         <div className="gold-rule mx-7" />
-        <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+        <nav className="flex-1 px-4 py-6 space-y-0.5 overflow-y-auto">
           {navItems.map((it) => {
             const active = pathname === it.to || (it.to !== "/" && pathname.startsWith(it.to));
             return (
@@ -38,22 +37,23 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                 key={it.to}
                 to={it.to}
                 className={cn(
-                  "group flex items-center gap-3 px-3.5 py-2.5 rounded-md text-sm transition-all",
+                  "group flex items-center gap-3 px-3.5 py-2.5 rounded-sm text-sm transition-all border-l-2",
                   active
-                    ? "bg-sidebar-accent text-primary border border-primary/20 shadow-soft"
-                    : "text-sidebar-foreground hover:text-primary hover:bg-sidebar-accent/60",
+                    ? "bg-sidebar-accent text-primary border-primary"
+                    : "text-sidebar-foreground hover:text-primary hover:bg-sidebar-accent/60 border-transparent",
                 )}
               >
+                <span className={cn("font-mono text-[10px] tracking-widest", active ? "text-primary" : "text-muted-foreground")}>{it.num}</span>
                 <it.icon className={cn("h-4 w-4", active && "text-primary")} />
-                <span className="font-medium tracking-tight">{it.label}</span>
+                <span className="font-body tracking-tight">{it.label}</span>
               </NavLink>
             );
           })}
         </nav>
         <div className="px-7 py-5 border-t border-sidebar-border text-[10px] leading-relaxed text-muted-foreground">
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 font-mono uppercase tracking-widest">
             <Lock className="h-3 w-3 text-primary/70" />
-            Documento Confidencial
+            Confidencial
           </div>
           <div className="mt-1">Ciclo 2026 · Hyndra · Newe</div>
         </div>
