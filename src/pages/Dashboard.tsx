@@ -71,6 +71,7 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Hero />
       <SectionHeader
         eyebrow="Ciclo 2026 · Visão Executiva"
         title="Programa de Participação Anual nos Resultados"
