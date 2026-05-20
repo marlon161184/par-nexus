@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { ConfidentialBadge } from "@/components/ConfidentialBadge";
 import { useParStore, computeIndividualResult, computeFinalSalaries } from "@/store/parStore";
 import { HyndraWatermark } from "@/components/HyndraWatermark";
+import { Hero } from "@/components/Hero";
 
 import { members } from "@/data/members";
 import { Users, Calendar, Activity, ShieldCheck, AlertTriangle, TrendingUp, ArrowRight } from "lucide-react";
@@ -70,6 +71,7 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Hero />
       <SectionHeader
         eyebrow="Ciclo 2026 · Visão Executiva"
         title="Programa de Participação Anual nos Resultados"
