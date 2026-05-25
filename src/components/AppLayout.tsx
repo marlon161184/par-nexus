@@ -19,26 +19,41 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex w-full bg-gradient-ink">
       {/* Sidebar (desktop) */}
-      <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen">
-        <div className="px-7 pt-8 pb-6">
-          <div className="flex items-center gap-4 h-7 mb-5 opacity-90">
+      <aside className="hidden lg:flex flex-col w-72 shrink-0 bg-sidebar border-r border-sidebar-border sticky top-0 h-screen relative overflow-hidden">
+        {/* Emerald aurora glow */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-80"
+          style={{
+            background:
+              "radial-gradient(60% 40% at 0% 0%, hsl(var(--emerald) / 0.18), transparent 70%), radial-gradient(50% 35% at 100% 100%, hsl(var(--emerald-bright) / 0.10), transparent 70%)",
+          }}
+        />
+        {/* Vertical emerald edge */}
+        <div className="absolute right-0 top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-emerald-bright/40 to-transparent" />
+
+        <div className="relative px-7 pt-8 pb-6">
+          <div className="flex items-center gap-4 h-7 mb-5 opacity-95">
             <img src={logoHyndra} alt="Hyndra" className="h-6 w-24 object-contain" />
-            <span className="h-4 w-px bg-border/60" />
+            <span className="h-4 w-px bg-emerald-bright/40" />
             <img src={logoNewe} alt="Newe Urbanismo" className="h-6 w-24 object-contain" />
           </div>
-          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-bright/80 flex items-center gap-2">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-bright opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-bright" />
+            </span>
             Hyndra · Newe
           </div>
           <h1 className="font-display text-4xl mt-3 leading-none tracking-tight font-light">
-            PAR <span className="gold-text">2026</span>
+            PAR <span className="emerald-text">2026</span>
           </h1>
           <p className="text-[11px] text-muted-foreground mt-3 max-w-[22ch] leading-relaxed">
             Plataforma de Resultados · Programa de Participação Anual
           </p>
         </div>
 
-        <div className="gold-rule mx-7" />
-        <nav className="flex-1 px-4 py-6 space-y-0.5 overflow-y-auto">
+        <div className="emerald-rule mx-7 relative" />
+        <nav className="relative flex-1 px-4 py-6 space-y-0.5 overflow-y-auto">
           {navItems.map((it) => {
             const active = pathname === it.to || (it.to !== "/" && pathname.startsWith(it.to));
             return (
@@ -46,22 +61,25 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                 key={it.to}
                 to={it.to}
                 className={cn(
-                  "group flex items-center gap-3 px-3.5 py-2.5 rounded-sm text-sm transition-all border-l-2",
+                  "group relative flex items-center gap-3 px-3.5 py-2.5 rounded-sm text-sm transition-all border-l-2 overflow-hidden",
                   active
-                    ? "bg-sidebar-accent text-primary border-primary"
-                    : "text-sidebar-foreground hover:text-primary hover:bg-sidebar-accent/60 border-transparent",
+                    ? "bg-emerald/10 text-emerald-bright border-emerald-bright shadow-[inset_0_0_24px_hsl(var(--emerald)/0.12)]"
+                    : "text-sidebar-foreground hover:text-emerald-bright hover:bg-emerald/5 border-transparent hover:border-emerald-bright/50",
                 )}
               >
-                <span className={cn("font-mono text-[10px] tracking-widest", active ? "text-primary" : "text-muted-foreground")}>{it.num}</span>
-                <it.icon className={cn("h-4 w-4", active && "text-primary")} />
+                {active && (
+                  <span className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-emerald-glow via-emerald-bright to-emerald shadow-[0_0_12px_hsl(var(--emerald-bright))]" />
+                )}
+                <span className={cn("font-mono text-[10px] tracking-widest", active ? "text-emerald-bright" : "text-muted-foreground group-hover:text-emerald-bright/70")}>{it.num}</span>
+                <it.icon className={cn("h-4 w-4 transition-transform group-hover:scale-110", active && "text-emerald-bright")} />
                 <span className="font-body tracking-tight">{it.label}</span>
               </NavLink>
             );
           })}
         </nav>
-        <div className="px-7 py-5 border-t border-sidebar-border text-[10px] leading-relaxed text-muted-foreground">
+        <div className="relative px-7 py-5 border-t border-sidebar-border text-[10px] leading-relaxed text-muted-foreground">
           <div className="flex items-center gap-1.5 font-mono uppercase tracking-widest">
-            <Lock className="h-3 w-3 text-primary/70" />
+            <Lock className="h-3 w-3 text-emerald-bright/80" />
             Confidencial
           </div>
           <div className="mt-1">Ciclo 2026 · Hyndra · Newe</div>
