@@ -79,12 +79,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        emerald: {
+          deep: "hsl(var(--emerald-deep))",
+          DEFAULT: "hsl(var(--emerald))",
+          bright: "hsl(var(--emerald-bright))",
+          glow: "hsl(var(--emerald-glow))",
+        },
       },
       backgroundImage: {
         "gradient-gold": "var(--gradient-gold)",
         "gradient-ink": "var(--gradient-ink)",
         "gradient-card": "var(--gradient-card)",
         "gradient-gold-soft": "var(--gradient-gold-soft)",
+        "gradient-emerald": "var(--gradient-emerald)",
+        "gradient-emerald-soft": "var(--gradient-emerald-soft)",
       },
       boxShadow: {
         elegant: "var(--shadow-elegant)",
