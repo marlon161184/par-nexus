@@ -54,10 +54,11 @@
     --radius: 0.25rem;                   /* Editorial: cantos quase retos */
 
     /* Brand greens — Hyndra */
-    --emerald-deep: 168 70% 16%;
-    --emerald: 160 64% 32%;
-    --emerald-bright: 152 58% 52%;
-    --emerald-glow: 150 70% 60%;
+    /* Verde Newe #9DCA79 — acento único */
+    --emerald-deep: 95 35% 28%;
+    --emerald: 95 40% 45%;
+    --emerald-bright: 95 45% 63%;   /* #9DCA79 */
+    --emerald-glow: 95 55% 76%;
 
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(60 4% 90%), hsl(0 0% 72%));
